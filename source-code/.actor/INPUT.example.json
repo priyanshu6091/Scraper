@@ -1,0 +1,10 @@
+{
+  "start_urls": [
+    {
+      "url": "https://www.crunchbase.com/discover/funding-rounds"
+    }
+  ],
+  "max_pages": 2,
+  "use_apify_proxy": true,
+  "proxy_groups": ["RESIDENTIAL"]
+}

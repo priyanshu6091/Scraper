@@ -1,0 +1,114 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "company_name": {
+            "type": "string",
+            "title": "Company Name",
+            "description": "Name of the company that received funding"
+        },
+        "company_url": {
+            "type": "string",
+            "title": "Company URL",
+            "description": "Crunchbase profile URL of the company"
+        },
+        "funding_round_type": {
+            "type": "string",
+            "title": "Funding Round Type",
+            "description": "Type of funding round (e.g., Series A, Seed, IPO)"
+        },
+        "funding_amount": {
+            "type": "string",
+            "title": "Funding Amount",
+            "description": "Funding amount with currency (raw text)"
+        },
+        "funding_amount_usd": {
+            "type": "number",
+            "title": "Funding Amount (USD)",
+            "description": "Normalized funding amount in USD"
+        },
+        "funding_date": {
+            "type": "string",
+            "title": "Funding Date (Raw)",
+            "description": "Raw funding date as extracted"
+        },
+        "funding_date_parsed": {
+            "type": "string",
+            "title": "Funding Date",
+            "description": "Parsed funding date in YYYY-MM-DD format"
+        },
+        "investors": {
+            "type": "array",
+            "title": "Investors",
+            "description": "List of investors participating in the round"
+        },
+        "source_url": {
+            "type": "string",
+            "title": "Source URL",
+            "description": "URL from which the data was scraped"
+        },
+        "scraped_at": {
+            "type": "string",
+            "title": "Scraped At",
+            "description": "ISO timestamp when the record was scraped"
+        },
+        "record_hash": {
+            "type": "string",
+            "title": "Record Hash",
+            "description": "Content-based hash for deduplication"
+        },
+        "extraction_method": {
+            "type": "string",
+            "title": "Extraction Method",
+            "description": "Method used to extract data: 'api' or 'dom'"
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Funding Records",
+            "transformation": {
+                "fields": [
+                    "company_name",
+                    "funding_round_type",
+                    "funding_amount",
+                    "funding_date_parsed",
+                    "investors",
+                    "company_url",
+                    "extraction_method"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "company_name": {
+                        "label": "Company",
+                        "format": "text"
+                    },
+                    "funding_round_type": {
+                        "label": "Round Type",
+                        "format": "text"
+                    },
+                    "funding_amount": {
+                        "label": "Amount",
+                        "format": "text"
+                    },
+                    "funding_date_parsed": {
+                        "label": "Date",
+                        "format": "text"
+                    },
+                    "investors": {
+                        "label": "Investors",
+                        "format": "array"
+                    },
+                    "company_url": {
+                        "label": "Profile",
+                        "format": "link"
+                    },
+                    "extraction_method": {
+                        "label": "Method",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}

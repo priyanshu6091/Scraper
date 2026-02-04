@@ -1,0 +1,18 @@
+{
+    "actorSpecification": 1,
+    "name": "crunchbase-funding-scraper",
+    "title": "Crunchbase Funding Data Scraper",
+    "description": "Production-grade scraper that collects publicly accessible funding data from Crunchbase using API interception and DOM fallback. Built with stealth Playwright, proxy rotation, and enterprise-level error handling.",
+    "version": "1.0",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "python-playwright",
+        "generatedBy": "Senior Python Scraping Engineer"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "dockerfile": "../Dockerfile"
+}

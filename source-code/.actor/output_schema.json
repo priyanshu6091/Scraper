@@ -1,0 +1,34 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Crunchbase Funding Data Output",
+    "properties": {
+        "overview": {
+            "type": "string",
+            "title": "Dataset Overview",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+        },
+        "fundingRecords": {
+            "type": "string",
+            "title": "Funding Records",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?clean=true&format=json"
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Funding Records Overview",
+            "transformation": {
+                "fields": [
+                    "company_name",
+                    "funding_round_type",
+                    "funding_amount",
+                    "funding_date_parsed",
+                    "company_url",
+                    "extraction_method"
+                ]
+            },
+            "display": {
+                "component": "table"
+            }
+        }
+    }
+}
